@@ -15,8 +15,8 @@
    
    Start jupyter
    > jupyter lab
-4. Install other required libraries
-   > !pip install openai matplotlib pyspark
+4. Install other required libraries from notebook
+   > !pip install openai matplotlib pyspark pandas plotly
 
 
 ## Downloading the sample data
