@@ -1,0 +1,17 @@
+id,type,description,natural_language_query,sql_query
+1,insight,SumOfTotalAmounts,"What is the sum of total_amount for all rides?","SELECT SUM(total_amount) AS total_revenue FROM taxi_trips;"
+2,sql query,CountAllRides,"How many total rides are recorded in the table?","SELECT COUNT(*) AS total_rides FROM taxi_trips;"
+3,AverageTip,"What is the average tip amount?","SELECT AVG(tip_amount) AS average_tip FROM taxi_trips;"
+4,MinAndMaxTripDistance,"What are the shortest and longest trip distances?","SELECT MIN(trip_distance) AS min_distance, MAX(trip_distance) AS max_distance FROM taxi_trips;"
+5,RidesByVendor,"How many rides were provided by each vendor?","SELECT VendorID, COUNT(*) AS rides_count FROM taxi_trips GROUP BY VendorID;"
+6,TripsOver50Dollars,"How many rides have a total_amount greater than 50 dollars?","SELECT COUNT(*) AS high_value_rides FROM taxi_trips WHERE total_amount > 50;"
+7,GroupByPaymentType,"Show the average fare_amount grouped by payment type.","SELECT payment_type, AVG(fare_amount) AS avg_fare FROM taxi_trips GROUP BY payment_type;"
+8,FilterByPULocation,"How many rides originated at location 132?","SELECT COUNT(*) AS rides_from_132 FROM taxi_trips WHERE PULocationID = 132;"
+9,DateRangeCount,"Count the rides that took place between 2024-07-01 and 2024-07-07.","SELECT COUNT(*) AS rides_in_range FROM taxi_trips WHERE tpep_pickup_datetime >= '2024-07-01' AND tpep_pickup_datetime < '2024-07-08';"
+10,Top10Fares,"Which rides have the 10 highest fare_amount values?","SELECT * FROM taxi_trips ORDER BY fare_amount DESC LIMIT 10;"
+11,TotalAmountByDay,"What is the total revenue generated for each calendar day?","SELECT CAST(tpep_pickup_datetime AS DATE) AS pickup_date, SUM(total_amount) AS daily_revenue FROM taxi_trips GROUP BY CAST(tpep_pickup_datetime AS DATE) ORDER BY pickup_date;"
+12,AveragePassengerCount,"What is the average passenger_count in all rides?","SELECT AVG(passenger_count) AS avg_passenger_count FROM taxi_trips;"
+13,AirportFeeDistribution,"Show the minimum, maximum, and average Airport_fee.","SELECT MIN(Airport_fee) AS min_fee, MAX(Airport_fee) AS max_fee, AVG(Airport_fee) AS avg_fee FROM taxi_trips;"
+14,FilterByLocationAndTime,"How many rides started at location 140 after 6 AM?","SELECT COUNT(*) AS rides_after_6am FROM taxi_trips WHERE PULocationID = 140 AND CAST(tpep_pickup_datetime AS time) > '06:00:00';"
+15,TripDistanceAboveAverage,"Find all rides whose trip_distance is above the average trip_distance.","SELECT * FROM taxi_trips WHERE trip_distance > (SELECT AVG(trip_distance) FROM taxi_trips);"
+16, insight,Give 10 insights , MAX faire paid by user is {sQL query1}, insight 2 {sql query 2.}
