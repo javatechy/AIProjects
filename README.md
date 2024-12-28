@@ -1,5 +1,23 @@
 # AIProjects
 
+## Setting up python notebook on local
+1. Check if python is installed
+   > python --version
+
+2. Creating a new virtual env
+   > python -m venv sqlenv
+   
+   Activate the env 
+   >.\sqlenv\Scripts\activate
+
+3. Install jupyter
+   > pip install jupyter
+   
+   Start jupyter
+   > jupyter lab
+4. Install other required libraries
+
+
 ## Downloading the sample data
 To download the sample data -  Go to https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
