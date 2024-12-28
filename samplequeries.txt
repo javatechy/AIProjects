@@ -13,5 +13,4 @@ id,type,description,natural_language_query,sql_query
 12,AveragePassengerCount,"What is the average passenger_count in all rides?","SELECT AVG(passenger_count) AS avg_passenger_count FROM taxi_trips;"
 13,AirportFeeDistribution,"Show the minimum, maximum, and average Airport_fee.","SELECT MIN(Airport_fee) AS min_fee, MAX(Airport_fee) AS max_fee, AVG(Airport_fee) AS avg_fee FROM taxi_trips;"
 14,FilterByLocationAndTime,"How many rides started at location 140 after 6 AM?","SELECT COUNT(*) AS rides_after_6am FROM taxi_trips WHERE PULocationID = 140 AND CAST(tpep_pickup_datetime AS time) > '06:00:00';"
-15,TripDistanceAboveAverage,"Find all rides whose trip_distance is above the average trip_distance.","SELECT * FROM taxi_trips WHERE trip_distance > (SELECT AVG(trip_distance) FROM taxi_trips);"
-16, insight,Give 10 insights , MAX faire paid by user is {sQL query1}, insight 2 {sql query 2.}
+15,TripDistanceAboveAverage,"Find all rides whose trip_distance is above the average trip_distance.","SELECT * FROM taxi_trips WHERE trip_distance > (SELECT AVG(trip_distance) FROM taxi_trips);
